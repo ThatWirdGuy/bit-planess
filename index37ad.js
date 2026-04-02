@@ -4548,7 +4548,7 @@
                                                 L.points--,
                                                     L.points <= 0 &&
                                                         setTimeout(() => {
-                                                            l || ((l = !0), alert((null == L ? void 0 : L.name) + " team loses\n\n  ¯\\_(ツ)_/¯"), (location.href = "?mode=teams"));
+                                                            l || ((l = !0), null == L ? void 0 : L.name + " team loses\n\n  ¯\\_(ツ)_/¯"), (location.href = "?mode=teams"));
                                                         }, 2 * u.n);
                                                 const N = new y.a(t.color);
                                                 (N.life = u.h), (N.ammo = N.maxAmmo = t.maxAmmo), (N.landed = !0), N.move(Object(A.u)(L.startingPosition, M.ground)), t.control(N), M.add(N);
@@ -4720,7 +4720,7 @@
                                             let j = M.player;
                                             if ((j.detach(), j.disableAI(), j.isHuman))
                                                 setTimeout(() => {
-                                                    alert(`Good run! But ${z} opponents turned out to be too much for you.\n\n  (╯°□°)╯︵ ┻━┻`), (location.href = "?mode=survival");
+                                                   
                                                 }, 3 * u.n);
                                             else {
                                                 let M = !0;
@@ -4793,7 +4793,7 @@
                                             (w = window.setTimeout(() => {
                                                 let M = a.members.filter((M) => M.hasPlane()).length,
                                                     j = S.members.filter((M) => M.hasPlane()).length;
-                                                (0 != M && 0 != j) || (0 != M && 0 == j && alert("You won! 🎉"), 0 == M && 0 != j && alert("You lose."), 0 == M && 0 == j && alert("¯\\_(ツ)_/¯"), (location.href = "?mode=swarm"));
+                                                (0 != M && 0 != j) || (0 != M && 0 == j && a, 0 == M && 0 != j &&, 0 == M && 0 == j, (location.href = "?mode=swarm"));
                                             }, 5 * u.n));
                                     };
                                     for (let t = 1; t < j; t++) {
@@ -4917,7 +4917,7 @@
                                         (M.players = []),
                                         (M.onCrash = function () {
                                             setTimeout(() => {
-                                                alert("Cows have taken their revenge!"), (location.href = "?mode=revenge");
+                                               
                                             }, 3 * u.n);
                                         }),
                                         Object(g.b)(M);
