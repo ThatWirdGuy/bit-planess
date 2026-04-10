@@ -4532,27 +4532,33 @@
                                             thrustLevers: { up: ["ArrowUp", "KeyW"], down: ["ArrowDown", "KeyS"] },
                                             elevator: { up: ["ArrowLeft", "KeyA"], down: ["ArrowRight", "KeyD"] },
                                             fire: "Space",
-                                            missile: "KeyX",
-                                            catapult: "KeyC",
-                                        });
-                                    let l = !1;
-                                    M.onCrash = function (j) {
-                                        j.player &&
-                                            (j.player.detach(),
-                                            setTimeout(() => {
-                                                const t = j.player;
-                                                if (!t) return;
-                                                if (t.inGame()) return;
-                                                let L = t.team;
-                                                if (!L) return;
-                                                L.points--,
-                                                   if (L.points <= 0) {
-                                                        setTimeout() => {
-                                                            l || ((l = !0), null == L ? void 0 : L.name + " team loses\n\n  ¯\\_(ツ)_/¯"), (location.href = "?mode=teams"));
-                                                        }, 2 * u.n);
-                                                const N = new y.a(t.color);
-                                                (N.life = u.h), (N.ammo = N.maxAmmo = t.maxAmmo), (N.landed = !0), N.move(Object(A.u)(L.startingPosition, M.ground)), t.control(N), M.add(N);
-                                            }, 6e3));
+                           missile: "KeyX",
+                    catapult: "KeyC",
+                });
+                let l = !1;
+                M.onCrash = function (j) {
+                    j.player &&
+                        (j.player.detach(),
+                        setTimeout(() => {
+                            const t = j.player;
+                            if (!t) return;
+                            if (t.inGame()) return;
+                            let L = t.team;
+                            if (!L) return;
+                            L.points--;
+                            if (L.points <= 0) {
+                                setTimeout(() => {
+                                    if (!l) {
+                                        l = !0;
+                                        alert((null == L ? "Unknown" : L.name) + " team loses\n\n  ¯\\_(ツ)_/¯");
+                                        location.href = "?mode=teams";
+                                    }
+                                }, 2000);
+                            }
+                            const N = new y.a(t.color);
+                            (N.life = u.h), (N.ammo = N.maxAmmo = t.maxAmmo), (N.landed = !0), N.move(Object(A.u)(L.startingPosition, M.ground)), t.control(N), M.add(N);
+                        }, 6000));
+                };
                                     };
                                     for (let t = 1; t < j.count; t++) {
                                         const N = i.a.pop() || "no name",
