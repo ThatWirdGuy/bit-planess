@@ -4546,7 +4546,7 @@
                                                 let L = t.team;
                                                 if (!L) return;
                                                 L.points--,
-                                                    L.points <= 0 &&
+                                                   if (L.points <= 0) {
                                                         setTimeout() => {
                                                             l || ((l = !0), null == L ? void 0 : L.name + " team loses\n\n  ¯\\_(ツ)_/¯"), (location.href = "?mode=teams"));
                                                         }, 2 * u.n);
